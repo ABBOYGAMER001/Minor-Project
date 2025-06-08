@@ -23,5 +23,5 @@ RUN ./mvnw clean package -DskipTests
 # Expose the port
 EXPOSE 8080
 
-# Run the application
-CMD ["java", "-jar", "target/timetable-backend-0.0.1-SNAPSHOT.jar"]
+# Run the application with the JVM option to disable Netty native
+CMD ["java", "-Dio.netty.noNative=true", "-jar", "target/timetable-backend-0.0.1-SNAPSHOT.jar"]
