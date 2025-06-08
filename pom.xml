@@ -29,6 +29,19 @@
             <version>9.2.0</version>
         </dependency>
 
+        <!-- Google Cloud Firestore -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-firestore</artifactId>
+            <version>3.13.0</version>
+        </dependency>
+
+        <!-- Jakarta Annotation API for @PostConstruct (no explicit version, managed by Spring Boot) -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+
         <!-- Spring Boot Mail -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
