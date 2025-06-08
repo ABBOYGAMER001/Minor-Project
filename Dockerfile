@@ -6,13 +6,12 @@ WORKDIR /app
 
 # Copy Maven wrapper and pom.xml
 COPY .mvn/ .mvn
-COPY mvnw .
-COPY pom.xml .
+COPY mvnw pom.xml ./
 
-# ✅ Make mvnw executable (after it's in the right place)
+# ✅ Make mvnw executable explicitly inside container
 RUN chmod +x mvnw
 
-# Download dependencies (will cache unless pom.xml changes)
+# Download dependencies
 RUN ./mvnw dependency:go-offline
 
 # Copy the rest of the source code
