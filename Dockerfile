@@ -6,9 +6,10 @@ WORKDIR /app
 
 # Copy Maven wrapper and pom.xml
 COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+COPY mvnw .
+COPY pom.xml .
 
-# Make mvnw executable
+# ✅ Make mvnw executable (after it's in the right place)
 RUN chmod +x mvnw
 
 # Download dependencies (will cache unless pom.xml changes)
@@ -20,10 +21,8 @@ COPY . .
 # Build the application
 RUN ./mvnw clean package -DskipTests
 
-# Expose the port (adjust if your Spring Boot app runs on a different port)
+# Expose the port
 EXPOSE 8080
 
 # Run the application
 CMD ["java", "-jar", "target/timetable-backend-0.0.1-SNAPSHOT.jar"]
-
-#hello
