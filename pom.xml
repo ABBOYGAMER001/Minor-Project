@@ -29,12 +29,6 @@
             <groupId>com.google.firebase</groupId>
             <artifactId>firebase-admin</artifactId>
             <version>9.2.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.grpc</groupId>
-                    <artifactId>grpc-netty-shaded</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- Google Cloud Firestore -->
@@ -42,12 +36,13 @@
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-firestore</artifactId>
             <version>3.13.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.grpc</groupId>
-                    <artifactId>grpc-netty-shaded</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+
+        <!-- Add required gRPC transport dependency -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <version>1.61.0</version>
         </dependency>
 
         <!-- Add static Netty SSL support -->
